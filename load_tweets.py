@@ -279,7 +279,7 @@ def insert_tweet(connection,tweet):
                 ON CONFLICT DO NOTHING
                 ''')
             res = connection.execute(sql, {
-                'id_users':menton['id']
+                'id_users':mention['id']
                 })
 
             # insert into tweet_mentions
