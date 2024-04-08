@@ -121,7 +121,7 @@ def insert_tweet(connection,tweet):
             ON CONFLICT (id_users) DO NOTHING 
             ''')
 
-         connection.execute(sql, {
+        connection.execute(sql, {
             'id_users': tweet['user']['id'],
             'created_at': tweet['user']['created_at'],
             'updated_at': tweet['created_at'],
@@ -137,7 +137,7 @@ def insert_tweet(connection,tweet):
             'favourites_count':tweet['user']['favourites_count'],
             'statuses_count':tweet['user']['statuses_count'],
             'withheld_in_countries':tweet['user'].get('withheld_in_countries', None),
-        })
+            })
 
         ########################################
         # insert into the tweets table
