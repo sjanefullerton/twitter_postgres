@@ -292,8 +292,7 @@ def insert_tweet(connection,tweet):
                 ''')
             res=connection.execute(sql, {
                 'id_tweets':tweet['id',
-                'id_users':mention['id']
-                })
+                'id_users':mention['id']})
 
         ########################################
         # insert into the tweet_tags table
