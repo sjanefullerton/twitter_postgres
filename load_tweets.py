@@ -246,7 +246,6 @@ def insert_tweet(connection,tweet):
             sql=sqlalchemy.sql.text('''
                 INSERT INTO tweets_urls 
                 (id_tweets, id_urls)
-                ON CONFLICT DO NOTHING
                 ''')
 
             res = connection.execute(sql, {
