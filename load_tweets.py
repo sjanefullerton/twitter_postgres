@@ -244,12 +244,12 @@ def insert_tweet(connection,tweet):
             id_urls = get_id_urls(url['expanded_url'], connection)
 
             sql=sqlalchemy.sql.text('''
-                INSERT INTO tweets_urls 
-                (id_tweets, id_urls)
+                INSERT INTO tweet_urls 
+                (id_tweet, id_urls)
                 ''')
 
             res = connection.execute(sql, {
-                'id_tweets': tweet['id'],
+                'id_tweet': tweet['id'],
                 'id_urls': id_urls
                 })
 
