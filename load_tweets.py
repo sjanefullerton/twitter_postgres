@@ -243,11 +243,12 @@ def insert_tweet(connection,tweet):
         for url in urls:
             id_urls = get_id_urls(url['expanded_url'], connection)
 
-            sql=sqlalchemy.sql.text('''
+            sql = sqlalchemy.sql.text('''
                 INSERT INTO tweet_urls 
                 (id_tweet, id_urls)
+                VALUES
+                (:id_tweet, :id_urls)
                 ''')
-
             res = connection.execute(sql, {
                 'id_tweet': tweet['id'],
                 'id_urls': id_urls
